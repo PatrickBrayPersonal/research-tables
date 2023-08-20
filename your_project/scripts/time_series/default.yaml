@@ -1,0 +1,27 @@
+defaults:
+  - tsfresh: default
+read: 
+  _target_: your_package.data.read.file_to_df
+  path: data/bar_crawl/raw/all_accelerometer_data_pids_13.csv
+transform:
+  - _target_: your_package.data.aggregate.tsfresh
+    column_id: pid
+    column_sort: time
+    kind_to_fc_parameters: ${tsfresh}p
+  - _target_: your_package.data.transform.bar_crawl_join
+  - _target_: your_package.data.transform.drop_pattern
+    pattern: pid
+model:
+  model1:
+  - _target_: sklearn.preprocessing.StandardScaler
+  - _target_: sklearn.linear_model.LinearRegression
+  model2:
+  - _target_: sklearn.preprocessing.MinMaxScaler
+  - _target_: sklearn.linear_model.LinearRegression
+split:
+  _target_: your_package.model.split.default
+  label: TAC_Reading
+  train_size: 0.8
+train:
+  _target_: your_package.model.train.sklearn
+
