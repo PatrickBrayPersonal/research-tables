@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "your_package"
+name = "table_extract"
 version = "0.1.0"
-description = "__description__"
-authors = ["__authors__"]
+description = "Application to aid researchers by extracting common ects from research tables"
+authors = ["Patrick Bray"]
 readme = "README.md"
-packages = [{include = "your_package"}]
+packages = [{include = "table_extract"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"

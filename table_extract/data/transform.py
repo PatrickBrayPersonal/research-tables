@@ -9,7 +9,7 @@ import pandas as pd
 from loguru import logger
 from pandas import DataFrame
 
-from your_package.data.read import file_to_df
+from table_extract.data.read import file_to_df
 
 
 def transformer(func):

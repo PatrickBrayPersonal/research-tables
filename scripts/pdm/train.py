@@ -5,8 +5,8 @@ from hydra.utils import call, instantiate
 from loguru import logger
 from omegaconf import DictConfig, OmegaConf
 from sklearn.pipeline import Pipeline
-import polars as pl
-from your_package.utils import (
+
+from table_extract.utils import (
     log_best_params,
     log_config,
     log_feature_importance,
@@ -22,7 +22,7 @@ def run(cfg: DictConfig, outputs_dir: str) -> None:
     for t in cfg.get("transform", []):
         df = call(t, df=df)
     for f in cfg.get("feature", []):
-        df.with_columns(call(f, df=df))
+        df[f._target_] = call(f, df=df)
     for m in cfg.get("model", []):
         mlflow.set_experiment(cfg.experiment_name)
         pipe = Pipeline([(c._target_, instantiate(c)) for c in cfg.model[m]])
@@ -38,7 +38,7 @@ def run(cfg: DictConfig, outputs_dir: str) -> None:
     logger.info("Complete")
 
 
-@hydra.main(config_path="./", config_name="polars", version_base="1.3")
+@hydra.main(config_path="./", config_name="default", version_base="1.3")
 def hydra_run(cfg: DictConfig) -> None:
     make_logfile(HydraConfig.get().runtime.output_dir, __file__)
     run(cfg, outputs_dir=HydraConfig.get().runtime.output_dir)

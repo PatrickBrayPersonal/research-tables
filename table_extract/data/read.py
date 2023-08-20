@@ -3,16 +3,17 @@ Register data readers
 """
 from re import match
 
-import polars as pl
+import pandas as pd
 
-from your_package.utils import error
+from table_extract.utils import error
 
 
 def file_to_df(path: str, **kwargs):
     funcs = {
-        r".*\.parquet": pl.read_parquet,
-        r".*\.csv": pl.read_csv,
-        r".*\.xlsx": pl.read_excel,
+        r".*\.parquet": pd.read_parquet,
+        r".*\.p": pd.read_pickle,
+        r".*\.csv": pd.read_csv,
+        r".*\.xlsx": pd.read_excel,
     }
     for pattern, func in funcs.items():
         if match(pattern, path) is not None:

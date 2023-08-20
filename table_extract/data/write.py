@@ -6,7 +6,7 @@ from re import match
 
 import pandas as pd
 
-from your_package.utils import error
+from table_extract.utils import error
 
 
 def df_to_file(df: pd.DataFrame, path: str, **kwargs):

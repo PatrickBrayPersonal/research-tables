@@ -10,7 +10,7 @@ import numpy as np
 from sklearn.calibration import calibration_curve
 from sklearn.metrics import auc, precision_recall_curve, roc_curve
 
-from your_package.utils import error
+from table_extract.utils import error
 
 
 def pr_curve(y: np.ndarray, y_hat: np.ndarray):

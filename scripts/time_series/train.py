@@ -1,3 +1,5 @@
+import os
+
 import hydra
 import mlflow
 from hydra.core.hydra_config import HydraConfig
@@ -6,17 +8,18 @@ from loguru import logger
 from omegaconf import DictConfig, OmegaConf
 from sklearn.pipeline import Pipeline
 
-from your_package.utils import (
+from table_extract.utils import (
     log_best_params,
     log_config,
     log_feature_importance,
     log_script,
-    make_logfile,
 )
 
 
 @logger.catch
 def run(cfg: DictConfig, outputs_dir: str) -> None:
+    logger.add(f"{outputs_dir}/train.log")
+    os.chdir(hydra.utils.get_original_cwd())
     logger.info(OmegaConf.to_yaml(cfg))
     df = call(cfg.read)
     for t in cfg.get("transform", []):
@@ -40,7 +43,7 @@ def run(cfg: DictConfig, outputs_dir: str) -> None:
 
 @hydra.main(config_path="./", config_name="default", version_base="1.3")
 def hydra_run(cfg: DictConfig) -> None:
-    make_logfile(HydraConfig.get().runtime.output_dir, __file__)
+    os.chdir(hydra.utils.get_original_cwd())
     run(cfg, outputs_dir=HydraConfig.get().runtime.output_dir)
 
 

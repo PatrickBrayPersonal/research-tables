@@ -1,12 +1,12 @@
 """
-Unit Test the functions from your_package/data/transform.py
+Unit Test the functions from table_extract/data/transform.py
 """
 
 
 import fire
 
 from tests.utils import assert_df_equal, read_prompt_soln
-from your_package.data.transform import drop_pattern, select_pattern
+from table_extract.data.transform import drop_pattern, select_pattern
 
 
 def test_drop_pattern():

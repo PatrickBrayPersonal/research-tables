@@ -6,7 +6,7 @@ and return a dataframe grouped by the column **column_id**
 from pandas import DataFrame
 from tsfresh import extract_features
 
-from your_package.data.transform import transformer
+from table_extract.data.transform import transformer
 
 
 @transformer
