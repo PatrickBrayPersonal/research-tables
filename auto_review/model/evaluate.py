@@ -12,7 +12,7 @@ from sklearn.metrics import (
 )
 from loguru import logger
 
-from table_extract.model.visualize import binary_violin, pr_curve, roc_auc_curve
+from auto_review.model.visualize import binary_violin, pr_curve, roc_auc_curve
 
 
 def evaluator(func):

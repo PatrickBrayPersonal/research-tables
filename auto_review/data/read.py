@@ -5,7 +5,7 @@ from re import match
 
 import pandas as pd
 
-from table_extract.utils import error
+from auto_review.utils import error
 
 
 def file_to_df(path: str, **kwargs):

@@ -47,7 +47,7 @@ Project Organization
     |                         Put code here that is not easily reused and put details in your config files. Mature code should be moved
     |                         into the package for reuse from other scripts
     ├── tests              <- project tests
-    ├── table_extract       <- Source code for use in this project.
+    ├── auto_review       <- Source code for use in this project.
     │   ├── data           <- Functions to download, edit, or generate data
     │   │
     │   ├── model          <- Functions to train models and then use trained models to make

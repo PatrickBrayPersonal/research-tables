@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "table_extract"
+name = "auto_review"
 version = "0.1.0"
 description = "Application to aid researchers by extracting common ects from research tables"
 authors = ["Patrick Bray"]
 readme = "README.md"
-packages = [{include = "table_extract"}]
+packages = [{include = "auto_review"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -16,6 +16,12 @@ fire = "^0.5.0"
 tsfresh = "^0.20.1"
 loguru = "^0.7.0"
 polars = "^0.18.7"
+langchain = "^0.0.270"
+pinecone-client = "^2.2.2"
+python-dotenv = "^1.0.0"
+openai = "^0.27.8"
+tiktoken = "^0.4.0"
+arxiv = "^1.4.8"
 
 
 [tool.poetry.group.dev.dependencies]

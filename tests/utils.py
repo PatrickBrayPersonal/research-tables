@@ -3,7 +3,7 @@ from typing import Tuple
 import beavis
 import pandas as pd
 
-from table_extract.data.read import file_to_df
+from auto_review.data.read import file_to_df
 
 
 def assert_df_equal(df: pd.DataFrame, soln: pd.DataFrame):

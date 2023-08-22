@@ -6,7 +6,7 @@ import ast
 
 
 BUCKET = ""
-CODE_DIRS = ["scripts", "notebooks", "tests", "table_extract"]
+CODE_DIRS = ["scripts", "notebooks", "tests", "auto_review"]
 
 
 @task
@@ -102,5 +102,5 @@ def docs(c):
     """
     Update the documentation directory and update gh-pages from master
     """
-    os.system("pdoc table_extract -o docs")
+    os.system("pdoc auto_review -o docs")
     os.system("ghp-import -p -o docs")
