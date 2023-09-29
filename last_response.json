@@ -1,0 +1,5 @@
+[
+    "Year Published: 2017\nResearch Objective: Dynamic routing between capsules\nMeaningful Contributions: A discriminatively trained, multi-layer capsule system achieves state-of-the-art performance on MNIST and is considerably better than a convolutional net at recognizing highly overlapping digits.\nTools Used: Not specified\nRelevance to Computer Vision (1-5): 5",
+    "Year Published: 2017\nResearch Objective: N/A\nMeaningful Contributions: N/A\nTools Used: N/A\nRelevance to Computer Vision (1-5): N/A",
+    "Year Published: 2014-06-10\nTitle: Generative Adversarial Networks\nResearch Objective: Estimating generative models via an adversarial process\nMeaningful Contributions: Proposing a new framework for training generative models using a minimax two-player game\nTools Used: Generative Adversarial Networks\nRelevance to Computer Vision (1-5): 5"
+]

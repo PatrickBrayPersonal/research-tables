@@ -5,8 +5,8 @@ Unit Test the functions from auto_review/data/transform.py
 
 import fire
 
-from tests.utils import assert_df_equal, read_prompt_soln
 from auto_review.data.transform import drop_pattern, select_pattern
+from tests.utils import assert_df_equal, read_prompt_soln
 
 
 def test_drop_pattern():
